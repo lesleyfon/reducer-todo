@@ -2,7 +2,7 @@ import React from 'react';
 import TodoCard from './TodoCard';
 
 
-function Todo({state, setCompleted, complete, toggleTodo}) {
+function Todo({state, setCompleted, complete, toggleTodo, deleteTodo}) {
 
     return (
         <div>
@@ -13,6 +13,7 @@ function Todo({state, setCompleted, complete, toggleTodo}) {
                     setCompleted ={ setCompleted }
                     complete ={complete}
                     toggleTodo = {toggleTodo}
+                    deleteTodo ={deleteTodo}
                     />)
            }
         </div>

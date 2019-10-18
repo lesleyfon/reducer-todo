@@ -1,7 +1,9 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components'
-import './todo.css'
-function TodoCard({to_do, toggleTodo }) {
+import delet from './delete.png'
+import './todo.css';
+
+function TodoCard({to_do, toggleTodo, deleteTodo }) {
     return (
         <div style={{ position : 'relative'}}>
             <TodoCardStyles className = {`${to_do.completed && 'isCompleted' }`}>
@@ -14,7 +16,14 @@ function TodoCard({to_do, toggleTodo }) {
                     />
                 </label>
                 <h5>{to_do.item}</h5>
-                <p className='date'> {to_do.date.toDateString()}</p>
+                <p className='date'> {to_do.date.toDateString()} 
+                 <span onClick={e=>{ 
+                     e.preventDefault();
+                     deleteTodo(to_do)
+                }}>
+                    <img className='image' src={delet}/>
+                </span></p>
+               
             </TodoCardStyles>
             <div  className = {`${to_do.completed && 'strike' }`}></div>
         </div>
@@ -41,5 +50,18 @@ const TodoCardStyles =  styled.div`
         margin: 0px
     }
      
-    
+    .image{
+        height: 28px;
+        padding: 5px;
+        cursor: pointer;
+        margin-left: 3px;
+    }
+    .image:hover{
+        background: red;
+    }
+    p{
+    vertical-align:middle;
+    display: flex;
+    align-items: center;
+    }
 `;

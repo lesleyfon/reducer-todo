@@ -42,7 +42,14 @@ function App() {
         ...toDo
       }
     })
-    console.log(state)
+  }
+  function deleteTodo (toDo){
+    dispatch({
+      type: 'DELETE',
+      playload: {
+        ...toDo
+      }
+    })
   }
   return (
     <div className="App">
@@ -60,7 +67,9 @@ function App() {
       state ={ state }
       setCompleted = {setCompleted}
       toggleTodo = { toggleTodo }
+      deleteTodo ={deleteTodo}
       complete ={isCompleted}
+
       />
     </div>
   );

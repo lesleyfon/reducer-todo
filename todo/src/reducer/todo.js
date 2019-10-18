@@ -15,6 +15,9 @@ export function reducer(state, action ){
                     return todo;
                 }
             })
+        case 'DELETE' :
+            return state.filter(todo=> todo.id !== action.playload.id)
+            
         default:
             return state
             
