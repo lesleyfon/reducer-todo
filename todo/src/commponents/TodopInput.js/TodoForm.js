@@ -1,38 +1,59 @@
-import React from 'react';
+import React, {useState, useReducer} from 'react';
 import styled from 'styled-components'
 
 function TodoForm() {
+    const [todoInput, setTodoInput] = useState('');
+    const [toDoDate, setTodoDate] = useState('');
+
+    function handleChange(e){
+     setTodoInput(e.target.value)   
+    }
+    function handleSubmit(e){
+        e.preventDefault()
+        console.log(todoInput)
+        setTodoInput('')   
+    }
     return (
         <TodoFormStyles>
-            <div className='cursor'>
-            <input 
-                type='text'
-                name= 'todo'
-                placeholder= 'Add TO dO'
-                />
-                <i></i>
-            </div>
+            
+            <form onSubmit= { handleSubmit } className='todo-form'>
+                <div className='cursor'>
+                    <input 
+                    type='text'
+                    name= 'todoInput'
+                    placeholder= 'Add a to do'
+                    value={todoInput}
+                    onChange={handleChange}
+                    />
+                    <i></i>
+                </div>
                 <input 
                 type="date" 
                 name="dateToComplete"
-                value="2018-07-22"
+                // value="2018-07-22"
                 min="2018-01-01" 
                 max="3018-12-31" />
+            </form>
+            
         </TodoFormStyles>
     )
 }
 
 export default TodoForm
 
+
+
 const TodoFormStyles = styled.div`
-     width: 650px;
-    margin: 10px auto 50px auto;
-    border-radius: 5px;
-    box-shadow: 0 0px 3px 0 rgba(40,33,59,0.28);
-    padding: 20px 0px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    .todo-form{
+        width: 650px;
+       margin: 10px auto 50px auto;
+       border-radius: 5px;
+       box-shadow: 0 0px 3px 0 rgba(40,33,59,0.28);
+       padding: 20px 0px;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;  
+    }
     input {
         border: 1px solid #c4c4c4;
         border-radius: 5px;

@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 function TodoCard({to_do}) {
-    console.log(to_do.date.toDateString())
     return (
         <TodoCardStyles>
             <label>

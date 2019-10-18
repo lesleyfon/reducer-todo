@@ -9,7 +9,7 @@ function Todo() {
     return (
         <div>
            {
-               state.map(to_do => <TodoCard to_do ={to_do}/>)
+               state.map(to_do => <TodoCard to_do ={to_do} key={to_do.item}/>)
            }
         </div>
     )
