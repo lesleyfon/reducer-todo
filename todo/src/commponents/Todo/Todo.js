@@ -1,15 +1,14 @@
 import React, { useReducer } from 'react';
 import { reducer } from './../../reducer/todo'
-import {todoObject } from './../../data'
+import { todoObject } from './../../data'
 import TodoCard from './TodoCard';
 
-function Todo() {
-    const [state, dispatch]  = useReducer(reducer, todoObject)
+function Todo({state}) {
 
     return (
         <div>
            {
-               state.map(to_do => <TodoCard to_do ={to_do} key={to_do.item}/>)
+               state.map(to_do => <TodoCard to_do ={ to_do } key={ to_do.item }/>)
            }
         </div>
     )

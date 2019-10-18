@@ -1,22 +1,14 @@
-import React, {useState, useReducer} from 'react';
+import React from 'react';
 import styled from 'styled-components'
 
-function TodoForm() {
-    const [todoInput, setTodoInput] = useState('');
-    const [toDoDate, setTodoDate] = useState('');
+function TodoForm({
+    handleSubmit,
+    handleChange, 
+    handleDateChange, 
+    todoInput, 
+    toDoDate,  
+}) {
 
-    function handleChange(e){
-     setTodoInput(e.target.value)   
-    }
-    function handleDateChange(e){
-        setTodoDate(e.target.value)
-    }
-    function handleSubmit(e){
-        e.preventDefault()
-        console.log(toDoDate)
-        setTodoInput('');
-        setTodoDate('')
-    }
     return (
         <TodoFormStyles>
             
@@ -39,6 +31,7 @@ function TodoForm() {
                 max="3018-12-31"
                 onChange={handleDateChange}
                 />
+                <button>Submit</button>
             </form>
             
         </TodoFormStyles>
@@ -55,10 +48,22 @@ const TodoFormStyles = styled.div`
        margin: 10px auto 50px auto;
        border-radius: 5px;
        box-shadow: 0 0px 3px 0 rgba(40,33,59,0.28);
-       padding: 20px 0px;
+       padding: 20px 0px 0px 0px;
        display: flex;
        align-items: center;
        justify-content: space-between;  
+       flex-wrap: wrap;
+    }
+    button{
+        width: 99%;
+        margin-top: 10px;
+        padding: 5px 0px; 
+        background: #ffffff;
+        border-radius: 5px;
+        margin: 0 auto;
+    }
+    button:focus{
+        outline: none;
     }
     input {
         border: 1px solid #c4c4c4;

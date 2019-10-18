@@ -1,5 +1,6 @@
 
 export function reducer(state, action ){
+    console.log(state)
     switch (action.type) {
         case "ADD_TODO" :
             return [
@@ -7,7 +8,7 @@ export function reducer(state, action ){
                 action.playload
             ]
         default:
-            return state
+            // return state
             
     }
 }
