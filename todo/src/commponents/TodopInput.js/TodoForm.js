@@ -8,10 +8,14 @@ function TodoForm() {
     function handleChange(e){
      setTodoInput(e.target.value)   
     }
+    function handleDateChange(e){
+        setTodoDate(e.target.value)
+    }
     function handleSubmit(e){
         e.preventDefault()
-        console.log(todoInput)
-        setTodoInput('')   
+        console.log(toDoDate)
+        setTodoInput('');
+        setTodoDate('')
     }
     return (
         <TodoFormStyles>
@@ -29,10 +33,12 @@ function TodoForm() {
                 </div>
                 <input 
                 type="date" 
-                name="dateToComplete"
-                // value="2018-07-22"
+                name="toDoDate"
+                value={toDoDate}
                 min="2018-01-01" 
-                max="3018-12-31" />
+                max="3018-12-31"
+                onChange={handleDateChange}
+                />
             </form>
             
         </TodoFormStyles>
