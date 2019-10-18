@@ -1,15 +1,15 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components'
-
-function TodoCard({to_do}) {
-    
+import './todo.css'
+function TodoCard({to_do, toggleTodo }) {
     return (
-        <TodoCardStyles>
+        <TodoCardStyles className = {`${to_do.completed && 'isCompleted' }`}>
             <label>
                 <input 
                     type= 'checkbox'
                     name= 'isCompleted'
-                    value = { false }
+                    checked = { to_do.completed }
+                    onChange ={()=>{toggleTodo(to_do)}}
                 />
             </label>
             <h5>{to_do.item}</h5>
@@ -36,4 +36,6 @@ const TodoCardStyles =  styled.div`
         padding: 10px;
         margin: 0px
     }
+     
+    
 `;

@@ -1,14 +1,19 @@
-import React, { useReducer } from 'react';
-import { reducer } from './../../reducer/todo'
-import { todoObject } from './../../data'
+import React from 'react';
 import TodoCard from './TodoCard';
 
-function Todo({state}) {
+
+function Todo({state, setCompleted, complete, toggleTodo}) {
 
     return (
         <div>
            {
-               state.map(to_do => <TodoCard to_do ={ to_do } key={ to_do.item }/>)
+               state.map(to_do => <TodoCard     
+                    to_do ={ to_do } 
+                    key={ to_do.item } 
+                    setCompleted ={ setCompleted }
+                    complete ={complete}
+                    toggleTodo = {toggleTodo}
+                    />)
            }
         </div>
     )

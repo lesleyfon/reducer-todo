@@ -31,9 +31,18 @@ function App() {
               id : Date.now()
           }
       })
-      console.log(state)
       setTodoInput('');
       setTodoDate('')
+  }
+
+  function toggleTodo (toDo){
+    dispatch({
+      type: 'TOGGLE_TODO',
+      playload: {
+        ...toDo
+      }
+    })
+    console.log(state)
   }
   return (
     <div className="App">
@@ -46,12 +55,12 @@ function App() {
         toDoDate = { toDoDate }
         setTodoDate = {setTodoDate}
 
-        
-
-
       />
       <Todo 
       state ={ state }
+      setCompleted = {setCompleted}
+      toggleTodo = { toggleTodo }
+      complete ={isCompleted}
       />
     </div>
   );
