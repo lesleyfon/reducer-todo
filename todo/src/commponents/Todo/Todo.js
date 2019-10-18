@@ -5,7 +5,7 @@ import TodoCard from './TodoCard';
 
 function Todo() {
     const [state, dispatch]  = useReducer(reducer, todoObject)
-    console.log(state)
+
     return (
         <div>
            {
