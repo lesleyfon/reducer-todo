@@ -80,6 +80,11 @@ const TodoFormStyles = styled.div`
         box-shadow:none;
         border-radius: 0px;
         border: 0px;
+        width: 400px;
+        height: 29px;
+        padding: 10px;
+        font-size: 1.2rem;
+
     }
     [type="date"] {
     background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
@@ -94,7 +99,8 @@ const TodoFormStyles = styled.div`
     }
 
     .cursor {
-	position: relative;
+    position: relative;
+    margin-bottom: 10px;
     }
     .cursor	i {
         position: absolute;
@@ -107,6 +113,7 @@ const TodoFormStyles = styled.div`
         animation-duration: 800ms;
         animation-iteration-count: infinite;
         opacity: 1;
+        margin-bottom: 10px;
     }
 
     .cursor input:focus + i {

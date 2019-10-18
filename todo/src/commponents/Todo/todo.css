@@ -1,3 +1,13 @@
 .isCompleted{
     opacity: .5;
     }
+
+    .strike {
+        width: 618px;
+        position: absolute;
+        top: 30px;
+        right: 0;
+        left: 417px;
+        height: 2px;
+        background: black;
+      }

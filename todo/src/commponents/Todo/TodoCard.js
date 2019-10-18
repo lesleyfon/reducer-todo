@@ -3,23 +3,27 @@ import styled from 'styled-components'
 import './todo.css'
 function TodoCard({to_do, toggleTodo }) {
     return (
-        <TodoCardStyles className = {`${to_do.completed && 'isCompleted' }`}>
-            <label>
-                <input 
-                    type= 'checkbox'
-                    name= 'isCompleted'
-                    checked = { to_do.completed }
-                    onChange ={()=>{toggleTodo(to_do)}}
-                />
-            </label>
-            <h5>{to_do.item}</h5>
-            <p className='date'> {to_do.date.toDateString()}</p>
-        </TodoCardStyles>
+        <div style={{ position : 'relative'}}>
+            <TodoCardStyles className = {`${to_do.completed && 'isCompleted' }`}>
+                <label>
+                    <input 
+                        type= 'checkbox'
+                        name= 'isCompleted'
+                        checked = { to_do.completed }
+                        onChange ={()=>{toggleTodo(to_do)}}
+                    />
+                </label>
+                <h5>{to_do.item}</h5>
+                <p className='date'> {to_do.date.toDateString()}</p>
+            </TodoCardStyles>
+            <div  className = {`${to_do.completed && 'strike' }`}></div>
+        </div>
 
     )
 }
 
-export default TodoCard
+export default TodoCard;
+
 const TodoCardStyles =  styled.div`
     display: flex;
     align-items: center;
