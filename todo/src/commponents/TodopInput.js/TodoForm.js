@@ -41,7 +41,9 @@ const TodoFormStyles = styled.div`
         box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
         width: 190px;
         }
-   
+    input:focus{
+        outline: none
+    }
     [type='text']{
         box-shadow:none;
         border-radius: 0px;
